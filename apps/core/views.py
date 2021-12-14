@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from .models import wallpaper
 
-# Create your views here.
+
+def index(request):
+    images = wallpaper.objects.all()
+
+    return render(request, 'index.html')
